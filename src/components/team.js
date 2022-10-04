@@ -1,7 +1,8 @@
 function Team() {
   return (
-    <div>
+    <div className="cen h-screen w-screen">
       <h1>Team</h1>
+      <p>This is team</p>
     </div>
   );
 }

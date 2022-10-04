@@ -1,0 +1,23 @@
+@tailwid base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@100;200;300;500;700;900&display=swap');
+
+:root{
+    --primary-color:  #D6D6D6;
+    --secondary-color: #949494;
+    --gradient : linear-gradient(79.63deg, #2F2A7B -11.35%, #39B54A 112.49%);
+}
+
+/* font */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'epilogue', sans-serif;
+}
+body{
+    background: #292929;
+    mix-blend-mode: hard-light;
+}

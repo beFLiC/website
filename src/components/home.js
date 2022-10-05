@@ -1,6 +1,6 @@
 function Home() {
   return (
-    <div className="cen h-screen w-screen">
+    <div >
       <h1>Home</h1>
     </div>
   );

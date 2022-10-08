@@ -40,9 +40,9 @@ function App() {
 
   return (
     <div className="App">
-      <div id="navbar">
-        <Navbar />
-      </div>
+      <Navbar />
+
+
       <div id="panels">
         <div id="panels-container" ref={panelsContainer} style={{width:"500%"}}>
           <div className="home panel full-screen" ref={(e) => createPanelsRefs(e, 0)}>
@@ -50,17 +50,13 @@ function App() {
           </div>
 
           <div className="about panel full-screen" ref={(e) => createPanelsRefs(e, 1)}>
-            <div><About /></div>
+            <About />
           </div>
         </div>
       </div>
-      <div className="team full-screen">
-          <Team />
-      </div>
 
-      <div className="contact full-screen">
-        <Contact />
-      </div>
+      <Team />
+      <Contact />
     </div>
   );
 }

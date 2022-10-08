@@ -1,6 +1,6 @@
 function Navbar () {
   return (
-    <nav className="navbar absolute ">
+    <nav className="navbar fixed">
       <ul className="pt-10 pl-16 flex gap-10 text-primary-color text-xl  font-bold">
                   {/* LOGO animation -> svg*/}
           <svg id="svg" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="157.71 288.18 764.59 503.63" shapeRendering="geometricPrecision" textRendering="geometricPrecision">

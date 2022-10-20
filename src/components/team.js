@@ -1,7 +1,7 @@
 import Circle from "../circles";
 function Team() {
   return (
-    <div className="team full-screen h-screen w-screen">
+    <div id="team" className="full-screen h-screen w-screen">
       <div className="absolute">
         <h1>Team</h1>
         <p>This is team</p>

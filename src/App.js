@@ -43,13 +43,13 @@ function App() {
       <Navbar />
 
 
-      <div id="panels">
-        <div id="panels-container" ref={panelsContainer} style={{width:"500%"}}>
-          <div className="home panel full-screen" ref={(e) => createPanelsRefs(e, 0)}>
+      <div className="overflow-x-hidden">
+        <div id="panels-container" className="overflow-hidden flex flex-nowrap h-screen" ref={panelsContainer} style={{width:"500%"}}>
+          <div id="home" className="w-screen h-screen overflow-hidden" ref={(e) => createPanelsRefs(e, 0)}>
             <Home />
           </div>
 
-          <div className="about panel full-screen" ref={(e) => createPanelsRefs(e, 1)}>
+          <div className="about w-screen h-screen overflow-hidden" ref={(e) => createPanelsRefs(e, 1)}>
             <About />
           </div>
         </div>

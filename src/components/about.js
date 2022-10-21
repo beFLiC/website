@@ -1,23 +1,19 @@
-import Circle from "../circles";
-
+import SvgCircle from "./svg/svgCircles";
 function About() {
   return (
-    <div id="about">
-      <Circle x="-10vw" y="50vh" r = "60vh"/>
-      <Circle x="-10vw" y="50vh" r = "40vh"/>
+    <div id="about" className="panel w-screen h-screen overflow-hidden">
+      <SvgCircle x="-10vw" y="50vh" r = "60vh"/>
+      <SvgCircle x="-10vw" y="50vh" r = "40vh"/>
 
-      <div class="flex flex-col  md:grid grid-cols-9 mx-auto p-2 py-20  text-blue-50">
-          <div class="flex flex-row-reverse md:contents">
+      <div className="flex flex-col  md:grid grid-cols-9 mx-auto p-2 py-20  text-blue-50">
+          <div className="flex flex-row-reverse md:contents">
             <div
-              initial={{ opacity: 0, x: -100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1.2, bounce: 1 }}
-              class="col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto shadow-md"
+              className="col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto shadow-md"
             >
-              <h3 class=" font-bold justify-center mb-3 bg-gradient-to-r from-indigo-800 to-green-400 text-transparent bg-clip-text inline text-4xl">
+              <h3 className=" font-bold justify-center mb-3 bg-gradient-to-r from-indigo-800 to-green-400 bg-clip-text inline text-4xl">
                 What is FLiC
               </h3>
-              <p class="leading-tight text-[#D6D6D6] text-justify">
+              <p className="leading-tight text-[#D6D6D6] text-justify">
                 Curiosity and creativity has no boundaries, to set up a think
                 tank that not only revolves around a student's anticipated part
                 and parcel that is money management but also gives them a flow
@@ -29,31 +25,29 @@ function About() {
                 an edge over Finance Management and working in the Market.
               </p>
             </div>
-            <div class="col-start-5 col-end-6 md:mx-auto relative mr-10">
-              <div class="h-full w-6 flex items-center justify-center">
-                <div class="h-full w-1 bg-white/60 pointer-events-none"></div>
+            <div className="col-start-5 col-end-6 md:mx-auto relative mr-10">
+              <div className="h-full w-6 flex items-center justify-center">
+                <div className="h-full w-1 bg-white/60 pointer-events-none"></div>
               </div>
-              <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-white shadow"></div>
+              <div className="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-white shadow"></div>
             </div>
           </div>
 
-          <div class="flex md:contents">
-            <div class="col-start-5 col-end-6 mr-10 md:mx-auto relative">
-              <div class="h-full w-6 flex items-center justify-center">
-                <div class="h-full w-1 bg-white/60 pointer-events-none"></div>
+          <div className="flex md:contents">
+            <div className="col-start-5 col-end-6 mr-10 md:mx-auto relative">
+              <div className="h-full w-6 flex items-center justify-center">
+                <div className="h-full w-1 bg-white/60 pointer-events-none"></div>
               </div>
-              <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-white shadow"></div>
+              <div className="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-white shadow"></div>
             </div>
             <div
-              initial={{ opacity: 0, x: 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1.2, bounce: 1 }}
-              class=" col-start-6 col-end-10 p-4 rounded-xl my-4 mr-auto shadow-md"
+
+              className=" col-start-6 col-end-10 p-4 rounded-xl my-4 mr-auto shadow-md"
             >
-              <h3 class=" justify-center mb-3 bg-gradient-to-r from-indigo-800 to-green-400 text-transparent bg-clip-text font-bold inline text-4xl">
+              <h3 className=" justify-center mb-3 bg-gradient-to-r from-indigo-800 to-green-400 text-transparent bg-clip-text font-bold inline text-4xl">
                 Why is FLiC
               </h3>
-              <p class="leading-tight text-[#D6D6D6] text-justify">
+              <p className="leading-tight text-[#D6D6D6] text-justify">
                 Flic is the financial literacy club which focuses on building
                 financial independence skills and knowledge among peers. In
                 today's era, we live in a rapidly developing country, it's
@@ -68,17 +62,15 @@ function About() {
               </p>
             </div>
           </div>
-          <div class="flex flex-row-reverse md:contents">
+          <div className="flex flex-row-reverse md:contents">
             <div
-              initial={{ opacity: 0, x: -100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1.2, bounce: 1 }}
-              class="col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto shadow-md"
+
+              className="col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto shadow-md"
             >
-              <h3 class="justify-center mb-3 bg-gradient-to-r from-indigo-800 to-green-400 text-transparent bg-clip-text font-bold inline text-4xl">
+              <h3 className="justify-center mb-3 bg-gradient-to-r from-indigo-800 to-green-400 text-transparent bg-clip-text font-bold inline text-4xl">
                 Our Mission
               </h3>
-              <p class="leading-tight text-[#D6D6D6] text-justify">
+              <p className="leading-tight text-[#D6D6D6] text-justify">
                 Since we believe that "financial freedom is the power to produce
                 wealth and not necessarily having wealth," our goal is to
                 acquire knowledge imported and spread the knowledge we have
@@ -90,11 +82,11 @@ function About() {
                 importantly our future.
               </p>
             </div>
-            <div class="col-start-5 col-end-6 md:mx-auto relative mr-10">
-              <div class="h-full w-6 flex items-center justify-center">
-                <div class="h-full w-1 bg-white/60 pointer-events-none"></div>
+            <div className="col-start-5 col-end-6 md:mx-auto relative mr-10">
+              <div className="h-full w-6 flex items-center justify-center">
+                <div className="h-full w-1 bg-white/60 pointer-events-none"></div>
               </div>
-              <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-white shadow"></div>
+              <div className="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-white shadow"></div>
             </div>
           </div>
         </div>

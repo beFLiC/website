@@ -1,11 +1,11 @@
 import SvgCircle from "./svg/svgCircles";
 function About() {
   return (
-    <div id="about" className="panel w-screen h-screen overflow-hidden">
+    <div id="about" className="panel w-screen sm:h-screen h-[100vh] overflow-scroll sm:overflow-hidden">
       <SvgCircle x="-10vw" y="50vh" r = "60vh"/>
       <SvgCircle x="-10vw" y="50vh" r = "40vh"/>
 
-      <div className="flex flex-col  md:grid grid-cols-9 mx-auto p-2 py-20  text-blue-50">
+      <div className="flex flex-col  md:grid grid-cols-9 mx-auto p-2 sm:py-20 py-6  text-blue-50">
           <div className="flex flex-row-reverse md:contents">
             <div
               className="col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto shadow-md"

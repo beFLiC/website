@@ -2,8 +2,8 @@ import SvgLogo from "./svg/svgLogo";
 
 function Navbar () {
   return (
-    <nav className="navbar fixed z-50">
-      <ul className="pt-10 pl-16 flex gap-12 items-center text-xl font-bold">
+    <nav className="navbar fixed z-50 bg-[#202020]">
+      <ul className="pt-4 pl-16 flex gap-12 items-center text-xl font-bold">
         {/* LOGO animation -> svg*/}
         <li>
           <a href="#home">

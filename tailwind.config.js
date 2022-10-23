@@ -2,9 +2,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "primary-color": "var(--primary-color)",
-        "secondary-color": "var(--secondary-color)",
-        "gradient" : "var(--gradient)"
+        "pcolor": "#202020",
+        "grncolor": "#39B54A",
+        "purp" : "#262262"
       },
     },
   },

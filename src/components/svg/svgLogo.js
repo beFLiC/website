@@ -1,9 +1,9 @@
 function SvgLogo(){
     return (
-      <svg id="svg" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="157.71 288.18 764.59 503.63" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
+      <svg id="svg" width={40} height={40} xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="157.71 288.18 764.59 503.63" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
       <defs>
         <linearGradient id="gradient" gradientUnits="userSpaceOnUse" fy="90%" gradientTransform="rotate(-11)">
-          <stop offset={0} style={{stopColor: '#2F2A7B'}} />
+          <stop offset={0} style={{stopColor: '#262262'}} />
           <stop offset={1} style={{stopColor: '#39B54A'}} />
         </linearGradient>
         

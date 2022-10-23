@@ -50,7 +50,7 @@ function Team() {
     <div id="team" className="full-screen h-screen w-screen">
       <div className="absolute sm:mx-16 mt-16">
         <h2 className='bg-gradient-to-r mt-5 mx-auto text-center sm:text-left from-indigo-800 to-green-500 text-transparent bg-clip-text sm:text-5xl text-4xl text-[2.1rem] sm:mx-auto font-bold'>Meet Our Team!</h2>
-        <div className="border-b-4 mb-12  border-green-600 sm:ml-20 my-2 mx-auto lg:w-[15vw] sm:w-[20vw] w-[30vw]"></div>
+        <div className="border-b-4 mb-12  border-[#39B54A] sm:ml-20 my-2 mx-auto lg:w-[15vw] sm:w-[20vw] w-[30vw]"></div>
         <h3 className='mt-10 font-semibold text-center sm:text-left text-2xl text-white mb-4 sm:mb-4'>Co-Founders</h3>
         <div className="sm:grid lg:grid-cols-4 sm:grid-cols-2 sm:ml-5 snap-x snap-center md:ml-[-1.7rem] lg:ml-0 sm:w-[90vw] flex ml-[-15%] gap-[14vh] sm:gap-0 mx-auto w-auto mr-4 overflow-auto">
         {teamchiefs.map((value,idx) => {

@@ -8,9 +8,9 @@ function About() {
       <div className="flex flex-col  md:grid grid-cols-9 mx-auto p-2 sm:py-20 py-6  text-blue-50">
           <div className="flex flex-row-reverse md:contents">
             <div
-              className="col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto shadow-md"
+              className="col-start-1 text-center col-end-5 p-4 rounded-xl my-4 ml-auto "
             >
-              <h3 className=" font-bold justify-center mb-3 bg-gradient-to-r from-indigo-800 to-green-400 bg-clip-text inline text-4xl">
+              <h3 className=" font-bold justify-center mb-3 bg-gradient-to-r from-[#262262] to-[#39B54A] text-transparent bg-clip-text inline text-4xl">
                 What is FLiC
               </h3>
               <p className="leading-tight text-[#D6D6D6] text-justify">
@@ -42,9 +42,9 @@ function About() {
             </div>
             <div
 
-              className=" col-start-6 col-end-10 p-4 rounded-xl my-4 mr-auto shadow-md"
+              className=" col-start-6 col-end-10 p-4 text-center rounded-xl my-4 mr-auto "
             >
-              <h3 className=" justify-center mb-3 bg-gradient-to-r from-indigo-800 to-green-400 text-transparent bg-clip-text font-bold inline text-4xl">
+              <h3 className=" justify-center mb-3 bg-gradient-to-r from-[#262262] to-[#39B54A] text-transparent bg-clip-text font-bold inline text-4xl">
                 Why is FLiC
               </h3>
               <p className="leading-tight text-[#D6D6D6] text-justify">
@@ -65,9 +65,9 @@ function About() {
           <div className="flex flex-row-reverse md:contents">
             <div
 
-              className="col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto shadow-md"
+              className="col-start-1 text-center col-end-5 p-4 rounded-xl my-4 ml-auto "
             >
-              <h3 className="justify-center mb-3 bg-gradient-to-r from-indigo-800 to-green-400 text-transparent bg-clip-text font-bold inline text-4xl">
+              <h3 className="justify-center mb-3 bg-gradient-to-r from-[#262262] to-[#39B54A] text-transparent bg-clip-text font-bold inline text-4xl">
                 Our Mission
               </h3>
               <p className="leading-tight text-[#D6D6D6] text-justify">

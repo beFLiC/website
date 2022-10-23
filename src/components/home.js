@@ -3,7 +3,7 @@ import SvgDrawIcon from "./svg/svgDrawIcon";
 
 function Home() {
   return (
-    < div id="home" className="panel w-screen h-screen overflow-hidden">
+    < div id="home" className="panel w-screen sm:h-screen h-auto  overflow-hidden">
       <SvgCircle x="90vw" y="50vh" r = "60vh"/>
       <SvgCircle x="90vw" y="50vh" r = "40vh"/>
       <SvgCircle x="5vw" y="95vh" r = "10vh"/>

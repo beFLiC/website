@@ -1,6 +1,6 @@
 function Contact() {
   return (
-    <div id="contact" className="full-screen sm:h-screen h-auto w-screen">
+    <div id="contact" className="full-screen sm:h-screen md:mt-[70vh] lg:mt-0 h-auto w-screen">
       <div id='contact'>
       <section className="sm:py-52 pt-20 h-auto text-gray-50">
         <div className="grid max-w-6xl grid-cols-1 px-6 m-auto lg:px-8 md:grid-cols-2 md:divide-x">

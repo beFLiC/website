@@ -3,6 +3,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/all";
 
 function horizontalScroll(){
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
   /* Main navigation */
   let panelsContainer = document.querySelector("#panels-container");
   let masterTimeline;

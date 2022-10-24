@@ -16,6 +16,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* border: 1px solid rgb(255, 255, 255,0.5); */
 
   font-family: 'epilogue', sans-serif;
 
@@ -29,8 +30,6 @@
 }
 body{
   background: var(--background-color);
-
-  /* horizontal scroll */
   overflow-x: hidden;
 }
 
@@ -58,3 +57,22 @@ body{
 #svg-gradient:hover {
   opacity: 1;
 }
+
+/* home grid */
+.home-container {  
+  display: grid;
+  grid-template-columns: 0.23fr 0.9fr 1fr;
+  grid-template-rows: 0.6fr 1fr 0.8fr;
+  gap: 0px 0px;
+  grid-auto-flow: column;
+  grid-template-areas:
+    ". . ."
+    ". home-content home-model"
+    ". home-footer home-footer";
+
+  justify-items: start;
+  align-items: center;
+}
+.home-content { grid-area: home-content; }
+.home-model { grid-area: home-model; }
+.home-footer { grid-area: home-footer; }

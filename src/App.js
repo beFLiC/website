@@ -1,7 +1,7 @@
 import './index.css';
 
-import WebView from "./components/views/webView";
-import MobileView from "./components/views/mobileView";
+import WebView from "./views/webView";
+import MobileView from "./views/mobileView";
 
 
 function App() {

@@ -8,8 +8,8 @@ function Home() {
       <SvgCircle x="90vw" y="50vh" r = "40vh"/>
       <SvgCircle x="5vw" y="95vh" r = "10vh"/>
 
-      <div className="flex flex-col gap-20">
-        <div className="mx-auto sm:mx-32 flex flex-col pt-40">
+      <div className="home-container h-screen w-screen">
+        <div className="home-content">
           <h1 className="text-[#D6D6D6] antialiased md:text-4xl text-3xl font-[500] md:w-96 w-56 mx-4 sm:mx-0 sm:leading-[5rem] leading-[4rem] tracking-wide">
             Hey! Welcome to our club{" "}
             <span className="bg-gradient-to-r from-[#2F2A7B] text-7xl to-[#39B54A] text-transparent bg-clip-text sm:pl-2 font-[900] tracking-wide">
@@ -35,33 +35,32 @@ function Home() {
             </button>
           </div>
         </div>
-        <div className="sm:pl-12 pl-0 grid grid-cols-1 sm:flex w-full space-y-8 mt-2 sm:space-y-0 sm:pt-20">
-          <div className="sm:mx-16">
-            <div className="flex mt-12 sm:mt-0">
-              <SvgDrawIcon/>
-              <h2 initial={{opacity:0,y:100}} animate={{opacity:1,y:0}} transition={{delay:1,duration:1.1,bounce:2}} className="text-white font-semibold text-lg">Features</h2>
-            </div>
-            <p initial={{opacity:0,y:100}} animate={{opacity:1,y:0}} transition={{delay:1.2,duration:1.1,bounce:2}} className="sm:w-60 w-48 ml-[4.2rem] text-sm text-[#828282]">
-              Lorem ipsum dolor sit amet coctetur adipishhgging elit. Ratione
-              quae odio perferendis fugiat possimus. Corporis aliquam ipsum
-              debitis possimus similique molestias
-            </p>
-          </div>
-          <div className="sm:mx-4  pb-10">
-            <div className="flex">
-              <SvgDrawIcon/>
-              <h2 initial={{opacity:0,y:100}} animate={{opacity:1,y:0}} transition={{delay:1,duration:1.1,bounce:2}} className="text-white font-semibold text-lg">Features</h2>
-            </div>
-            <p initial={{opacity:0,y:100}} animate={{opacity:1,y:0}} transition={{delay:1.2,duration:1.1,bounce:2}} className="sm:w-60 w-48 ml-[4.2rem] text-sm text-[#828282]">
-              Lorem ipsum dolor sit amet coctetur adipishhgging elit. Ratione
-              quae odio perferendis fugiat possimus. Corporis aliquam ipsum
-              debitis possimus similique molestias
-            </p>
-          </div>
+        <div className="home-model">
+        </div>
+        <div className="home-footer flex flex-row gap-5">
+          <Foot/>
+          <Foot/>
+        </div>
+
         </div>
       </div>
-    </div>
   );
 }
 
 export default Home;
+
+function Foot() {
+  return (
+    <div className="flex gap-6">
+      <SvgDrawIcon/>
+      <div className="flex flex-col gap-3">
+        <h2 className="text-[#D6D6D6] font-semibold text-lg">Features</h2>
+        <p className="sm:w-60 w-48 text-sm text-[#828282]">
+          Lorem ipsum dolor sit amet coctetur adipishhgging elit. Ratione
+          quae odio perferendis fugiat possimus. Corporis aliquam ipsum
+          debitis possimus similique molestias.
+        </p>
+      </div>
+    </div>
+  );
+}

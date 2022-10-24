@@ -3,7 +3,6 @@ function SvgDrawIcon() {
       <svg initial={{opacity:0,scale:0.5}} animate={{opacity:1, scale:1}} transition={{delay:1.5,duration:0.7}}
       width="40"
       height="40"
-      className="mx-4"
       viewBox="0 0 69 69"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

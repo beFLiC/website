@@ -8,8 +8,9 @@
 :root{
   --primary-color:  #D6D6D6;
   --secondary-color: #949494;
-  --gradient : linear-gradient(79.63deg, #2F2A7B -11.35%, #39B54A 112.49%);
+  /* --gradient : linear-gradient(79.63deg, #2F2A7B -11.35%, #39B54A 112.49%); */
   --background-color : #1E1E1E;
+  --gradient: linear-gradient(85.67deg, #262262 -7.32%, #39B54A 107.02%);
 }
 
 *{
@@ -76,3 +77,5 @@ body{
 .home-content { grid-area: home-content; }
 .home-model { grid-area: home-model; }
 .home-footer { grid-area: home-footer; }
+
+/* gradient text */

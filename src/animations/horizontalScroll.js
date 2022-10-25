@@ -74,6 +74,12 @@ function horizontalScroll(){
     xPercent: -100 * ( panels.length - 1 ),
     duration: panels.length - stopPanel
   });
+
+  gsap.to('progress', {
+    value: 100,
+    ease: 'none',
+    scrollTrigger: { scrub: 0.3 }
+  });
   
 }
 

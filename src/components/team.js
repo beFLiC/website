@@ -2,13 +2,9 @@
 
 function Team() {
   return (
-    <div id="team" className="snap-x full-screen h-screen w-screen">
-      <div className="absolute">
-        <h1>Team</h1>
-        <p>This is team</p>
-      </div>
-      
-      {/* <SvgCircle x="-10vw" y="-50vh" r = "60vh"/> */}
+    <div id="team" className="relative full-screen h-screen w-screen [&_div]:absolute [&_div]:top-0">
+      <div className="w-full h-full text-[#d6d6d6] text-4xl overflow-hidden" id="bg"></div>
+      <div className="w-full h-full text-[#d6d6d6] text-4xl overflow-hidden" id="fg"></div>
     </div>
   );
 }

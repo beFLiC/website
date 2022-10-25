@@ -1,10 +1,11 @@
 import horizontalScroll from './horizontalScroll';
 import galleryAnimation from './galleryAnimation';
-
-function ScrollAnimations(){
+import teamAnimation from './teamAnimation';
+function Animations(){
   horizontalScroll();
   galleryAnimation();
+  teamAnimation();
   // test();
 }
 
-export default ScrollAnimations;
+export default Animations;

@@ -78,4 +78,18 @@ body{
 .home-model { grid-area: home-model; }
 .home-footer { grid-area: home-footer; }
 
-/* gradient text */
+/* progress bar */
+progress{
+  z-index: 10000 !important;
+}
+progress::-webkit-progress-bar {
+  background: transparent;
+}
+progress::-webkit-progress-value {
+  background: var(--gradient);
+  background-attachment: fixed;
+}
+progress::-moz-progress-bar {
+  background: var(--gradient);
+  background-attachment: fixed;
+}

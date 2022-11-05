@@ -34,6 +34,7 @@ function horizontalScroll(){
   /* Panels */
   const panels = gsap.utils.toArray("#panels-container .panel");
   const stopPanel = panels.findIndex((panel) => panel.dataset.pin);
+
   // Master timeline, animation horizontal + cards
   masterTimeline = gsap.timeline({
     defaults : {
@@ -58,15 +59,17 @@ function horizontalScroll(){
 
   var images = gsap.utils.toArray('.ppanel:not(.purple)');
   images.forEach((image, i) => {
-    masterTimeline.to(image, { height: 0 },`img${i}`)
-                  .to(image,{duration:0.12},'>');     // adding delay to see the text
+    masterTimeline
+      .to(image, { height: 0 },`img${i}`)
+      .to(image,{duration:0.12},'>');     // adding delay to see the text
   });
 
   var texts = gsap.utils.toArray('.panel-text');
   texts.forEach((text, i) => {
-    masterTimeline.to(text, { duration: 0.33, opacity: 1, y:"50%" },`img${i}-=0.33`)  // label minus 0.33
-                  .to(text,{duration:0.12},'>') // "+adding delay of 0.12, > is after previous"
-                  .to(text, { duration: 0.33, opacity: 0, y:"0%" }, ">")
+    masterTimeline
+      .to(text, { duration: 0.33, opacity: 1, y:"50%" },`img${i}-=0.33`)  // label minus 0.33
+      .to(text,{duration:0.12},'>') // "+adding delay of 0.12, > is after previous"
+      .to(text, { duration: 0.33, opacity: 0, y:"0%" }, ">")
     ;
   });
 

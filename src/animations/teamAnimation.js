@@ -1,80 +1,345 @@
 import {gsap} from 'gsap';
 function teamAnimation(){
-  var imgs = [
-    './logo512.png',
-    './logo512.png',
-    './logo512.png',
-    './logo512.png',
-    './logo512.png'
-  ],
-    len = imgs.length,
-    current = len-1,
-    closedWidth = Math.floor(window.innerWidth/10),
-    bg = document.getElementById('bg'),
-    fg = document.getElementById('fg');
+  let headEmail = document.querySelector('#handlesHeads .email'),
+headLinkedin = document.querySelector('#handlesHeads .linkedin'),
+headInstagram = document.querySelector('#handlesHeads .instagram'),
+DesignationHeads = document.querySelector('#designationHeads'),
+namehead = document.querySelector('#nameHeads')
 
-    for (var i=0; i<len; i++){
-  
-      var bgImg = document.createElement('div'); // 创建div 元素
-      bg.appendChild(bgImg); // 加入页面div bg中
-      
-      // gsap 插件
-      gsap.set(bgImg, {
-        attr:{id:'bgImg'+i, class:'bgImg'},
-        width:'100%',
-        height:'100%',
-        backgroundImage:'url('+imgs[i]+')',
-        backgroundSize:'cover',
-        backgroundPosition:'center'
+let headEmail2 = document.querySelector('#handlesHeads2 .email'),
+headLinkedin2 = document.querySelector('#handlesHeads2 .linkedin'),
+headInstagram2 = document.querySelector('#handlesHeads2 .instagram'),
+DesignationHeads2 = document.querySelector('#designationHeads2'),
+namehead2 = document.querySelector('#nameHeads2')
+;
+
+let ExecEmail = document.querySelector('#handlesExecutives .email'),
+ExecLinkedIn = document.querySelector('#handlesExecutives .linkedin'),
+ExecInstagram = document.querySelector('#handlesExecutives .instagram'),
+DesignationExec = document.querySelector('#designationExecutives'),
+nameexec = document.querySelector('#nameExecutives')
+;
+
+let dataExec = [
+  {
+    img:'./1.jpg',
+    designation : "President",
+    name : "Anurudh",
+    Handles : {
+      Email : "itsraavann@gmail.com",
+      LinkedIn : "https://www.linkedin.com/1",
+      Instagram : "https://www.instagram.com/1",
+    }
+  },
+  {
+    img:'./2.jpg',
+    designation : "Operations Executive",
+    name : "John",
+    Handles : {
+      Email : "itsraavann@gmail.com",
+      LinkedIn : "https://www.linkedin.com/2",
+      Instagram : "https://www.instagram.com/2",
+    }  
+  },
+  {
+    img:'./3.jpg',
+    designation : "Marketing Executive",
+    name : "Marry",
+    Handles : {
+      Email : "itsraavann@gmail.com",
+      LinkedIn : "https://www.linkedin.com/3",
+      Instagram : "https://www.instagram.com/3",
+    }  
+  }
+];
+
+let dataHeads = [
+  {
+    img:'./1.jpg',
+    designation : "Head of Operations",
+    name : "Anurudh",
+    Handles : {
+      Email : "itsraavann@gmail.com",
+      LinkedIn : "https://www.linkedin.com/1",
+      Instagram : "https://www.instagram.com/1",
+    }
+  },
+  {
+    img:'./2.jpg',
+    designation : "Tech Head",
+    name : "John",
+    Handles : {
+      Email : "itsraavann@gmail.com",
+      LinkedIn : "https://www.linkedin.com/2",
+      Instagram : "https://www.instagram.com/2",
+    }  
+  },
+  {
+    img:'./3.jpg',
+    designation : "Head of Marketing",
+    name : "Marry",
+    Handles : {
+      Email : "itsraavann@gmail.com",
+      LinkedIn : "https://www.linkedin.com/3",
+      Instagram : "https://www.instagram.com/3",
+    }  
+  },
+  {
+    img:'./1.jpg',
+    designation : "Head of Operations",
+    name : "Anurudh",
+    Handles : {
+      Email : "itsraavann@gmail.com",
+      LinkedIn : "https://www.linkedin.com/1",
+      Instagram : "https://www.instagram.com/1",
+    }
+  },
+  {
+    img:'./2.jpg',
+    designation : "Head of Operations",
+    name : "John",
+    Handles : {
+      Email : "itsraavann@gmail.com",
+      LinkedIn : "https://www.linkedin.com/2",
+      Instagram : "https://www.instagram.com/2",
+    }  
+  },
+  {
+    img:'./3.jpg',
+    designation : "Head of Operations",
+    name : "Marry",
+    Handles : {
+      Email : "itsraavann@gmail.com",
+      LinkedIn : "https://www.linkedin.com/3",
+      Instagram : "https://www.instagram.com/3",
+    }  
+  },
+  {
+    img:'./1.jpg',
+    designation : "Head of Operations",
+    name : "Anurudh",
+    Handles : {
+      Email : "itsraavann@gmail.com",
+      LinkedIn : "https://www.linkedin.com/1",
+      Instagram : "https://www.instagram.com/1",
+    }
+  },
+  {
+    img:'./2.jpg',
+    designation : "Head of Operations",
+    name : "John",
+    Handles : {
+      Email : "itsraavann@gmail.com",
+      LinkedIn : "https://www.linkedin.com/2",
+      Instagram : "https://www.instagram.com/2",
+    }  
+  },
+  {
+    img:'./3.jpg',
+    designation : "Head of Operations",
+    name : "Marry",
+    Handles : {
+      Email : "itsraavann@gmail.com",
+      LinkedIn : "https://www.linkedin.com/3",
+      Instagram : "https://www.instagram.com/3",
+    }  
+  },
+  {
+    img:'./3.jpg',
+    designation : "Head of Operations",
+    name : "Marry",
+    Handles : {
+      Email : "itsraavann@gmail.com",
+      LinkedIn : "https://www.linkedin.com/3",
+      Instagram : "https://www.instagram.com/3",
+    }  
+  }
+];
+
+let slider1 = document.getElementById('slider1');   //slider in executives
+let slider2 = document.getElementById('slider2');   //slider1 in heads
+let slider22 = document.getElementById('slider22');  //slider2 in heads
+
+document.querySelectorAll('.gradient-hover').forEach( element =>{
+  element.addEventListener('mousemove', (e)=>{
+    let mouseX = e.pageX - element.offsetLeft;
+    let mouseY = e.pageY - element.offsetTop;
+    const midx = window.innerWidth/2;
+    const midy = window.innerHeight/2;
+    const angle = Math.atan2(midy - mouseY, midx - mouseX);
+    const angleDeg = angle* 180 / Math.PI;
+
+    element.style.setProperty('background', `linear-gradient(${angleDeg}deg, #262262 6.24%, #52af5d 91.17%, #48af55 91.17%)`);
+  })
+})
+document.querySelectorAll('.gradient-hover-text').forEach( element =>{
+  element.addEventListener('mousemove', (e)=>{
+    let mouseX = e.pageX - element.offsetLeft;
+    let mouseY = e.pageY - element.offsetTop;
+    const midx = window.innerWidth/2;
+    const midy = window.innerHeight/2;
+    const angle = Math.atan2(midy - mouseY, midx - mouseX);
+    const angleDeg = angle* 180 / Math.PI;
+
+    element.style.setProperty('background', `linear-gradient(${angleDeg}deg, #262262 6.24%, #52af5d 91.17%, #48af55 91.17%)`);
+    element.style.setProperty('-webkit-background-clip', `text`);
+    element.style.setProperty('-webkit-text-fill-color', `transparent`);
+    element.style.setProperty('background-clip', `text`);
+  })
+})
+
+
+td(slider1,dataExec,'10');
+let dataHeads2 = dataHeads.splice(0,5);
+td(slider2,dataHeads,'11',false);
+td(slider22,dataHeads2,'11',true);
+
+
+function td(slider,data,f,two=false){
+  console.log(two, f, slider)
+  let twovar = two ? 2 : 1;
+  let bg = document.createElement('div');
+  let fg = document.createElement('div');
+  bg.classList.add('appendclass');
+  fg.classList.add('appendclass');
+
+  slider.appendChild(bg);
+  slider.appendChild(fg);
+
+  let len = data.length,
+    current = len-1,
+    closedWidth = Math.floor(window.innerWidth/(f>10)?50*dataExec.length : 50*dataHeads.length)
+  ;
+
+  for (var i=0; i<len; i++){
+    var bgImg = document.createElement('div'); 
+    bg.appendChild(bgImg);
+
+    gsap.set(bgImg, {
+      attr:{id:'bgImg'+twovar+f+i, class:'bgImg'+twovar+f},
+      width:'100%',
+      height:'100%',
+      backgroundImage:'url('+data[i].img+')',
+      backgroundSize:'cover',
+      backgroundPosition:'center'
+    })
+
+    var b = document.createElement('div');
+    fg.appendChild(b); 
+
+    let inhtmlclass='';
+    if(f > 10){
+      if(two){ inhtmlclass = 'headdesg2' }
+      else { inhtmlclass = 'headdesg' }
+    }else{
+      inhtmlclass='execdesg';
+    }
+    gsap.fromTo(b, {
+      attr:{id:'b'+twovar+f+i, class:'box'+twovar+f},
+      innerHTML:`<sub class=${inhtmlclass}>${data[i].designation}</sub>`,
+      width:'100%',
+      height:'100%',
+      borderLeft:(i>0)?'solid 4px #1e1e1e':'',
+      backgroundColor:'rgba(250,250,250,0)',
+      left:i*closedWidth,
+      transformOrigin:'100% 100%',
+      x:'100%'
+    },{
+      duration:i*0.15,
+      x:0,
+      ease:'expo.inOut'
+    })  
+
+
+
+    console.log("do ----" ,two)
+    if(f>10){   // if f>10 then it is for heads
+      if(two){
+        headEmail2.href = "mailto:"+data[len-1].Handles.Email;
+        headLinkedin2.href = data[len-1].Handles.LinkedIn;
+        headInstagram2.href = data[len-1].Handles.Instagram;
+
+        namehead2.innerHTML = data[len-1].name;
+        DesignationHeads2.innerHTML = data[len-1].designation;
+        console.log('here head2')
+
+        // allheaddesg2[len-1].classList.add('active');
+      } else {
+        headEmail.href = "mailto:"+data[len-1].Handles.Email;
+        headLinkedin.href = data[len-1].Handles.LinkedIn;
+        headInstagram.href = data[len-1].Handles.Instagram;
+
+        console.log('here in head')
+        namehead.innerHTML = data[len-1].name;
+        DesignationHeads.innerHTML = data[len-1].designation;
+      }
+    } else {
+      console.log('here in exec')
+
+      ExecEmail.href = "mailto:"+data[len-1].Handles.Email;
+      ExecLinkedIn.href = data[len-1].Handles.LinkedIn;
+      ExecInstagram.href = data[len-1].Handles.Instagram;
+      nameexec.innerHTML = data[len-1].name;
+      DesignationExec.innerHTML = data[len-1].designation;
+    }
+    b.onmouseenter = b.onclick = (e)=>{    
+      if (Number(e.currentTarget.id.substr(4))==current) return;
+    
+      var staggerOrder = !!(current < Number(e.currentTarget.id.substr(4)));
+      current = Number(e.currentTarget.id.substr(4));
+
+      gsap.to('.box'+twovar+f, {
+        duration:0.5,
+        ease:'elastic.out(0.3)',
+        left:(i)=>(i<=current)? i*closedWidth: ((f<=10)? slider1.offsetWidth:slider2.offsetWidth) -((len-i)*closedWidth),
+        x:0,
+        stagger: staggerOrder? 0.05:-0.05
       })
       
-      var b = document.createElement('div');
-      fg.appendChild(b); //加入到 fg 中
-      
-      // 给div添加gsap属性
-      gsap.fromTo(b, {
-        attr:{id:'b'+i, class:'box'},
-        innerHTML:'<p><sub>page.</sub> '+(i+1)+'</p>',
-        width:'100%',
-        height:'100%',
-        borderLeft:(i>0)?'solid 1px #eee':'',
-        backgroundColor:'rgba(250,250,250,0)',
-        left:i*closedWidth,
-        transformOrigin:'100% 100%',
-        x:'100%'
-      },{
-        duration:i*0.15,
-        x:0,
-        ease:'expo.inOut'
-      })  
-      
-      // 绑定事件
-      b.onmouseenter = b.onclick = (e)=>{    
-        if (Number(e.currentTarget.id.substr(1))===current) return;
-         
-        var staggerOrder = !!(current < Number(e.currentTarget.id.substr(1)));
-        current = Number(e.currentTarget.id.substr(1));
-        // 过渡动画到指定 box 层
-        gsap.to('.box', {
-          duration:0.5,
-          ease:'elastic.out(0.3)',
-          left:(i)=>(i<=current)? i*closedWidth: window.innerWidth-((len-i)*closedWidth),
-          x:0,
-          stagger: staggerOrder? 0.05:-0.05
-        })
-        
-        bg.appendChild( document.getElementById('bgImg'+current) )
-        gsap.fromTo('#bgImg'+current, {opacity:0}, {opacity:1, duration:0.3, ease:'power1.inOut'})
-        gsap.fromTo('#bgImg'+current, {scale:1.05, rotation:0.05}, {scale:1, rotation:0, duration:1.5, ease:'sine'}) 
+      bg.appendChild( document.getElementById('bgImg'+twovar+f+current) )
+      gsap.fromTo('#bgImg'+twovar+f+current, {opacity:0}, {opacity:1, duration:0.3, ease:'power1.inOut'})
+
+      if(f>10){
+        if(two){
+          headEmail2.href = "mailto:"+data[current].Handles.Email;
+          headLinkedin2.href = data[current].Handles.LinkedIn;
+          headInstagram2.href = data[current].Handles.Instagram;
+          namehead2.innerHTML = data[current].name;
+          DesignationHeads2.innerHTML = data[current].designation;
+  
+          let allheaddesg2 = document.querySelectorAll('.headdesg2');
+          allheaddesg2.forEach((e)=>{ e.classList.remove('active') });
+          console.log(current, allheaddesg2[current]);
+          allheaddesg2[current].classList.add('active');
+        } else {
+          headEmail.href = "mailto:"+data[current].Handles.Email;
+          headLinkedin.href = data[current].Handles.LinkedIn;
+          headInstagram.href = data[current].Handles.Instagram;
+          namehead.innerHTML = data[current].name;
+          DesignationHeads.innerHTML = data[current].designation;
+  
+          let allheaddesg = document.querySelectorAll('.headdesg');
+          allheaddesg.forEach((e)=>{ e.classList.remove('active') });
+          console.log(current, allheaddesg[current]);
+          allheaddesg[current].classList.add('active');
+        }
+
+      } else {
+        ExecEmail.href = "mailto:"+data[current].Handles.Email;
+        ExecLinkedIn.href = data[current].Handles.LinkedIn;
+        ExecInstagram.href = data[current].Handles.Instagram;
+        nameexec.innerHTML = data[current].name;
+        DesignationExec.innerHTML = data[current].designation;
+
+        let allexecdesg = document.querySelectorAll('.execdesg');
+        allexecdesg.forEach((e)=>{ e.classList.remove('active') });
+        allexecdesg[current].classList.add('active');      
       }
     }
-    
-    
-    // window.onresize = (e)=>{
-    //   // 重新计算宽度
-    //   closedWidth = Math.floor(window.innerWidth/10)
-    //   gsap.set('.box', { x:0, left:(i)=> (i<=current)? i*closedWidth: window.innerWidth-((n-i)*closedWidth) })
-    // }
+
+  }
+}
+
 }
 
 export default teamAnimation;

@@ -1,33 +1,35 @@
-import './gallery.css';
-function Gallery(){
+import "./gallery.css";
+import Lecture from '../assets/images/lecture.jpg'
+function Gallery() {
   return (
     <div id="gallery" className="snap-x full-screen h-full w-screen">
-      <div className="demo-wrapper [&_img]:w-full [&_img]:h-auto [&_img]:bg-[#f0f0f0] [&_ul]:pl-4 [&_ul]:list-none [&_li]:shrink-0 [&_li]:pr-4 overflow-x-hidden">
-        
-      <div className="w-screen h-screen flex justify-center items-center">
-          <h1 className="text-[#d6d6d6] text-9xl font-bold">Gallery</h1>
-      </div>
+      <div className="demo-wrapper [&_img]:w-full [&_img]:h-auto [&_img]:bg-blue-100 [&_ul]:pl-4 [&_ul]:list-none [&_li]:shrink-0 [&_li]:pr-4 overflow-x-hidden">
+        <div className="w-screen h-screen flex justify-center items-center">
+          <h1 className="text-blue-100 text-9xl font-bold">Gallery</h1>
+        </div>
 
         <section className="demo-text">
-          <div className="wrapper text">#BEFLICKINAWESOME#BEFLIC</div>
+          <div className="wrapper text">
+            #BE <span className="text-transparent flic"> FLICKIN</span> AWESOME#BEFLIC
+          </div>
         </section>
 
         <section className="demo-gallery">
-          <ul className="wrapper">
+          <ul className="wrapper flex">
             <li>
               <img
                 height={874}
-                alt = "img"
+                alt="img"
                 // src="https://source.unsplash.com/random/1240x874?sig=143"
-                src='./logo192.png'
+                src={Lecture}
                 width={1240}
               />
             </li>
             <li>
               <img
-                alt = "img"
+                alt="img"
                 height={874}
-                src='./logo192.png'
+                src="./logo192.png"
                 // src="https://source.unsplash.com/random/1240x874?sig=83"
                 width={1240}
               />
@@ -35,17 +37,17 @@ function Gallery(){
             <li>
               <img
                 height={874}
-                alt = "img"
-                src='./logo192.png'
+                alt="img"
+                src="./logo192.png"
                 // src="https://source.unsplash.com/random/1240x874?sig=122"
                 width={1240}
               />
             </li>
             <li>
               <img
-                alt = "img"
+                alt="img"
                 height={874}
-                src='./logo192.png'
+                src="./logo192.png"
                 // src="https://source.unsplash.com/random/1240x874?sig=114"
                 width={1240}
               />
@@ -58,8 +60,8 @@ function Gallery(){
             <li>
               <img
                 height={874}
-                alt = "img"
-                src='./logo192.png'
+                alt="img"
+                src="./logo192.png"
                 // src="https://source.unsplash.com/random/1240x874?sig=59"
                 width={1240}
               />
@@ -67,8 +69,8 @@ function Gallery(){
             <li>
               <img
                 height={874}
-                alt = "img"
-                src='./logo192.png'
+                alt="img"
+                src="./logo192.png"
                 // src="https://source.unsplash.com/random/1240x874?sig=130"
                 width={1240}
               />
@@ -76,8 +78,8 @@ function Gallery(){
             <li>
               <img
                 height={874}
-                alt = "img"
-                src='./logo192.png'
+                alt="img"
+                src="./logo192.png"
                 // src="https://source.unsplash.com/random/1240x874?sig=2"
                 width={1240}
               />
@@ -90,26 +92,26 @@ function Gallery(){
             <li>
               <img
                 height={874}
-                src='./logo192.png'
+                src="./logo192.png"
                 // src="https://source.unsplash.com/random/1240x874?sig=57"
-                alt = "img"
+                alt="img"
                 width={1240}
               />
             </li>
             <li>
               <img
                 height={874}
-                alt = "img"
-                src='./logo192.png'
+                alt="img"
+                src="./logo192.png"
                 // src="https://source.unsplash.com/random/1240x874?sig=80"
                 width={1240}
               />
             </li>
             <li>
               <img
-                alt = "img"
+                alt="img"
                 height={874}
-                src='./logo192.png'
+                src="./logo192.png"
                 // src="https://source.unsplash.com/random/1240x874?sig=119"
                 width={1240}
               />
@@ -122,8 +124,8 @@ function Gallery(){
             <li>
               <img
                 height={874}
-                alt = "img"
-                src='./logo192.png'
+                alt="img"
+                src="./logo192.png"
                 // src="https://source.unsplash.com/random/1240x874?sig=182"
                 width={1240}
               />
@@ -131,38 +133,37 @@ function Gallery(){
             <li>
               <img
                 height={874}
-                src='./logo192.png'
+                src="./logo192.png"
                 // src="https://source.unsplash.com/random/1240x874?sig=166"
-                alt = "img"
+                alt="img"
                 width={1240}
               />
             </li>
             <li>
               <img
                 height={874}
-                src='./logo192.png'
+                src="./logo192.png"
                 // src="https://source.unsplash.com/random/1240x874?sig=193"
                 width={1240}
-                alt = "img"
+                alt="img"
               />
             </li>
             <li>
               <img
                 height={874}
-                src='./logo192.png'
+                src="./logo192.png"
                 // src="https://source.unsplash.com/random/1240x874?sig=100"
                 width={1240}
-                alt = "img"
+                alt="img"
               />
             </li>
           </ul>
         </section>
 
         <section className="demo-text">
-          <div className="wrapper text">#BEFLICKINAWESOME</div>
+          <div className="wrapper text">#BE<span className="text-transparent flic"> FLICKIN</span> AWESOME</div>
         </section>
       </div>
-
     </div>
   );
 }

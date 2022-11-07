@@ -17,6 +17,7 @@ function App() {
       <div className="sm:hidden block z-0">
         <MobileView />
       </div>
+      
     </div>
   );
 }

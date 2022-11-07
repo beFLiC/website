@@ -13,7 +13,7 @@ function crossIcon() {
         x2="28.6924"
         y2="10.3076"
         stroke="#646464"
-        stroke-linecap="round"
+        strokeLinecap="round"
       />
       <line
         x1="10.3076"
@@ -21,7 +21,7 @@ function crossIcon() {
         x2="28.6924"
         y2="28.6924"
         stroke="#646464"
-        stroke-linecap="round"
+        strokeLinecap="round"
       />
     </svg>
   );

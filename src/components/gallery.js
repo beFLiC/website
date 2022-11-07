@@ -1,5 +1,5 @@
 import "./gallery.css";
-import Lecture from '../assets/images/lecture.jpg'
+import images from "../assets/images/export";
 function Gallery() {
   return (
     <div id="gallery" className="snap-x full-screen h-full w-screen">
@@ -10,7 +10,8 @@ function Gallery() {
 
         <section className="demo-text">
           <div className="wrapper text">
-            #BE <span className="text-transparent flic"> FLICKIN</span> AWESOME#BEFLIC
+            #BE <span className="text-transparent flic"> FLICKIN</span>{" "}
+            AWESOME#BEFLIC
           </div>
         </section>
 
@@ -21,16 +22,18 @@ function Gallery() {
                 height={874}
                 alt="img"
                 // src="https://source.unsplash.com/random/1240x874?sig=143"
-                src={Lecture}
+                src={images.handraise}
                 width={1240}
+                className="object-contain"
               />
             </li>
             <li>
               <img
                 alt="img"
                 height={874}
-                src="./logo192.png"
+                // src="./logo192.png"
                 // src="https://source.unsplash.com/random/1240x874?sig=83"
+                src={images.cakecutting}
                 width={1240}
               />
             </li>
@@ -38,7 +41,7 @@ function Gallery() {
               <img
                 height={874}
                 alt="img"
-                src="./logo192.png"
+                src={images.teachers}
                 // src="https://source.unsplash.com/random/1240x874?sig=122"
                 width={1240}
               />
@@ -47,7 +50,7 @@ function Gallery() {
               <img
                 alt="img"
                 height={874}
-                src="./logo192.png"
+                src={images.allmembers}
                 // src="https://source.unsplash.com/random/1240x874?sig=114"
                 width={1240}
               />
@@ -61,7 +64,7 @@ function Gallery() {
               <img
                 height={874}
                 alt="img"
-                src="./logo192.png"
+                src={images.handraise}
                 // src="https://source.unsplash.com/random/1240x874?sig=59"
                 width={1240}
               />
@@ -70,7 +73,7 @@ function Gallery() {
               <img
                 height={874}
                 alt="img"
-                src="./logo192.png"
+                src={images.allmembers}
                 // src="https://source.unsplash.com/random/1240x874?sig=130"
                 width={1240}
               />
@@ -79,7 +82,7 @@ function Gallery() {
               <img
                 height={874}
                 alt="img"
-                src="./logo192.png"
+                src={images.cakecutting}
                 // src="https://source.unsplash.com/random/1240x874?sig=2"
                 width={1240}
               />
@@ -92,7 +95,7 @@ function Gallery() {
             <li>
               <img
                 height={874}
-                src="./logo192.png"
+                src={images.teachers}
                 // src="https://source.unsplash.com/random/1240x874?sig=57"
                 alt="img"
                 width={1240}
@@ -102,7 +105,7 @@ function Gallery() {
               <img
                 height={874}
                 alt="img"
-                src="./logo192.png"
+                src={images.handraise}
                 // src="https://source.unsplash.com/random/1240x874?sig=80"
                 width={1240}
               />
@@ -111,7 +114,7 @@ function Gallery() {
               <img
                 alt="img"
                 height={874}
-                src="./logo192.png"
+                src={images.allmembers}
                 // src="https://source.unsplash.com/random/1240x874?sig=119"
                 width={1240}
               />
@@ -125,7 +128,7 @@ function Gallery() {
               <img
                 height={874}
                 alt="img"
-                src="./logo192.png"
+                src={images.allmembers}
                 // src="https://source.unsplash.com/random/1240x874?sig=182"
                 width={1240}
               />
@@ -133,7 +136,7 @@ function Gallery() {
             <li>
               <img
                 height={874}
-                src="./logo192.png"
+                src={images.handraise}
                 // src="https://source.unsplash.com/random/1240x874?sig=166"
                 alt="img"
                 width={1240}
@@ -142,7 +145,7 @@ function Gallery() {
             <li>
               <img
                 height={874}
-                src="./logo192.png"
+                src={images.cakecutting}
                 // src="https://source.unsplash.com/random/1240x874?sig=193"
                 width={1240}
                 alt="img"
@@ -151,7 +154,7 @@ function Gallery() {
             <li>
               <img
                 height={874}
-                src="./logo192.png"
+                src={images.handraise}
                 // src="https://source.unsplash.com/random/1240x874?sig=100"
                 width={1240}
                 alt="img"
@@ -161,7 +164,9 @@ function Gallery() {
         </section>
 
         <section className="demo-text">
-          <div className="wrapper text">#BE<span className="text-transparent flic"> FLICKIN</span> AWESOME</div>
+          <div className="wrapper text">
+            #BE<span className="text-transparent flic"> FLICKIN</span> AWESOME
+          </div>
         </section>
       </div>
     </div>

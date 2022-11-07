@@ -13,8 +13,8 @@ function menuIcon() {
         x2="30.6"
         y2="1"
         stroke="#646464"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
       <line
         x1="1"
@@ -22,8 +22,8 @@ function menuIcon() {
         x2="30.6"
         y2="17"
         stroke="#646464"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
       <line
         x1="1"
@@ -31,8 +31,8 @@ function menuIcon() {
         x2="30.6"
         y2="9"
         stroke="#646464"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
     </svg>
   );

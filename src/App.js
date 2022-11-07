@@ -2,11 +2,11 @@ import "./index.css";
 
 import WebView from "./views/webView";
 import MobileView from "./views/mobileView";
-import { BreakpointProvider } from "react-socks";
+// import { BreakpointProvider } from "react-socks";
 
 function App() {
   return (
-    <BreakpointProvider>
+    // <BreakpointProvider>
       <div className="App">
         {/* wide screen */}
         <div className="sm:block hidden z-0">
@@ -18,7 +18,7 @@ function App() {
           <MobileView />
         </div>
       </div>
-    </BreakpointProvider>
+    // </BreakpointProvider>
   );
 }
 

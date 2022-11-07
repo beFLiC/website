@@ -3,10 +3,10 @@ import SvgDrawIcon from "./svg/svgDrawIcon";
 
 function Home() {
   return (
-    < div id="home" className="panel w-screen h-screen overflow-hidden">
-      <SvgCircle x="90vw" y="50vh" r = "60vh"/>
-      <SvgCircle x="90vw" y="50vh" r = "40vh"/>
-      <SvgCircle x="5vw" y="95vh" r = "10vh"/>
+    <div id="home" className="panel w-screen h-screen overflow-hidden">
+      <SvgCircle x="90vw" y="50vh" r="60vh" />
+      <SvgCircle x="90vw" y="50vh" r="40vh" />
+      <SvgCircle x="5vw" y="95vh" r="10vh" />
 
       <div className="home-container h-screen w-screen">
         <div className="home-content">
@@ -21,29 +21,33 @@ function Home() {
           </p>
 
           <div className="flex space-x-6 sm:space-x-10">
-            <button initial={{opacity:0,x:-100}} animate={{opacity:1,x:0}} transition={{delay:1.2,duration:1.5,bounce:2}}
+            <button
+              initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 1.2, duration: 1.5, bounce: 2 }}
               type="button"
-              className="px-8 py-1  font-['Epilogue'] font-[600] antialiased rounded-full bg-blue-400 hover:bg-green-600 text-white"
+              className="px-8 py-1  font-['Epilogue'] font-[600] antialiased rounded-full bg-green-700 hover:bg-green-600 text-white"
             >
               Sample
             </button>
-            <button initial={{opacity:0,x:100}} animate={{opacity:1,x:0}} transition={{delay:1.2,duration:1.5,bounce:2}}
+            <button
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 1.2, duration: 1.5, bounce: 2 }}
               type="button"
-              className="px-8 py-3  bg-blue-500 font-['Epilogue'] hover:bg-[#453FA6] font-semibold rounded-full text-white"
+              className="px-8 py-3  bg-violet-900 font-['Epilogue'] hover:bg-[#453FA6] font-semibold rounded-full text-white"
             >
               Sample
             </button>
           </div>
         </div>
-        <div className="home-model">
-        </div>
+        <div className="home-model"></div>
         <div className="home-footer flex flex-row gap-5">
-          <Foot/>
-          <Foot/>
-        </div>
-
+          <Foot />
+          <Foot />
         </div>
       </div>
+    </div>
   );
 }
 
@@ -52,13 +56,13 @@ export default Home;
 function Foot() {
   return (
     <div className="flex gap-6">
-      <SvgDrawIcon/>
+      <SvgDrawIcon />
       <div className="flex flex-col gap-3">
         <h2 className="text-blue-100 font-semibold text-lg">Features</h2>
         <p className="sm:w-60 w-48 text-sm text-[#828282]">
-          Lorem ipsum dolor sit amet coctetur adipishhgging elit. Ratione
-          quae odio perferendis fugiat possimus. Corporis aliquam ipsum
-          debitis possimus similique molestias.
+          Lorem ipsum dolor sit amet coctetur adipishhgging elit. Ratione quae
+          odio perferendis fugiat possimus. Corporis aliquam ipsum debitis
+          possimus similique molestias.
         </p>
       </div>
     </div>

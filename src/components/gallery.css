@@ -20,4 +20,6 @@
 .flic {
   -webkit-text-stroke-width: 10px;
   -webkit-text-stroke-color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* padding-bottom: 5px; */
 }

@@ -2,9 +2,66 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/all";
 
-function horizontalScroll(){
+function horizontalScroll(isMobile){
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
+  if(isMobile){
+    scrollMobile();
+  }else{
+    horizontalScroll_();
+  }
+}
+
+function scrollMobile(){
+
+  gsap.set(".ppanel", { zIndex: (i, target, targets) => targets.length - i });
+  gsap.set(".panel-text", { zIndex: (i, target, targets) => targets.length - i });
+  let images = gsap.utils.toArray('.ppanel:not(.purple)');
+
+  let masterTimeline = gsap.timeline({
+    defaults : {
+      ease: "none",
+    },
+    // xPercent: -100 * ( panels.length - 1 ),
+    scrollTrigger: {
+      trigger: "section.black",
+      // scroller: '.App',
+      pin: '#about',
+      start: ()=>"top top",
+      end: () => "+=" + ((images.length + 1) * window.innerHeight),
+      scrub: 2,
+      markers: true,
+      // end: () =>  "+=" + (panelsContainer.offsetWidth - window.innerWidth)/3,
+      invalidateOnRefresh: true
+    }
+  })
+
+
+
+  images.forEach((image, i) => {
+    masterTimeline
+      .to(image, { height: 0 },`img${i}`)
+      .to(image,{duration:0.3},'>');     // adding delay to see the text
+  });
+
+  var texts = gsap.utils.toArray('.panel-text');
+  texts.forEach((text, i) => {
+    if(i<2){
+      masterTimeline
+        .to(text, { duration: 0.33, opacity: 1, y:"50%" },`img${i}-=0.33`)  // label minus 0.33
+        .to(text,{duration:0.3},'>') // "+adding delay of 0.12, > is after previous"
+        .to(text, { duration: 0.33, opacity: 0, y:"0%" }, ">")
+      ;
+    }else{
+      masterTimeline
+      .to(text, { duration: 0.33, opacity: 1, y:"50%" },`img${i}-=0.33`)  // label minus 0.33
+      .to(text,{duration:1},'>') // "+adding delay of 0.12, > is after previous"
+    }
+  });
+}
+
+
+function horizontalScroll_(){
   /* Main navigation */
   let panelsContainer = document.querySelector("#panels-container");
   let masterTimeline;
@@ -90,9 +147,6 @@ function horizontalScroll(){
     scrollTrigger: { scrub: 0.3 }
   });
   
-
-  // gradient hover
-
   document.querySelectorAll('.ppanel.purple').forEach( element =>{
     element.addEventListener('mousemove', (e)=>{
       var rect = element.getBoundingClientRect();

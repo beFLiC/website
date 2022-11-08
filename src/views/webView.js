@@ -27,7 +27,6 @@ function WebView() {
         <div id="panels-container" className="overflow-hidden flex flex-nowrap h-screen" style={{width:"500%"}}>
           <Home />
           <About />
-          {/* <Invite/> */}
         </div>
       </div>
       <Team />

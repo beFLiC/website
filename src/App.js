@@ -3,21 +3,23 @@ import './index.css';
 import WebView from "./views/webView";
 import MobileView from "./views/mobileView";
 
+import  { Breakpoint, BreakpointProvider } from 'react-socks';
 
 function App() {
 
   return (
-    <div className="App">
-    {/* wide screen */}
-      <div className="sm:block hidden z-0">
-        <WebView />
+    <BreakpointProvider>
+      <div className="App">
+        <Breakpoint medium up>
+          <WebView />
+        </Breakpoint>
+      
+        <Breakpoint small down>
+          <MobileView />
+        </Breakpoint>
       </div>
-    
-    {/* mobile screen */}
-      <div className="sm:hidden block z-0">
-        <MobileView />
-      </div>
-    </div>
+    </BreakpointProvider>
+
   );
 }
 

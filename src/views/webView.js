@@ -21,6 +21,7 @@ function WebView() {
         className="fixed top-0 left-0 appearance-none w-full h-4 border-none bg-transparent
           ::-webkit-progress-bar { background-color: transparent; }"
       ></progress>
+
       <Navbar />
       <div className="overflow-x-hidden">
         <div id="panels-container" className="overflow-hidden flex flex-nowrap h-screen" style={{width:"500%"}}>
@@ -29,8 +30,8 @@ function WebView() {
           {/* <Invite/> */}
         </div>
       </div>
-      <Gallery />
       <Team />
+      <Gallery />
       <Contact />
     </>
   );

@@ -159,27 +159,20 @@ let dataHeads = [
 let slider1 = document.getElementById('slider1');   //slider in executives
 let slider2 = document.getElementById('slider2');   //slider1 in heads
 let slider22 = document.getElementById('slider22');  //slider2 in heads
+let sliderrect = slider1.getBoundingClientRect();
 
 document.querySelectorAll('.gradient-hover').forEach( element =>{
   element.addEventListener('mousemove', (e)=>{
-    let mouseX = e.pageX - element.offsetLeft;
-    let mouseY = e.pageY - element.offsetTop;
-    const midx = window.innerWidth/2;
-    const midy = window.innerHeight/2;
-    const angle = Math.atan2(midy - mouseY, midx - mouseX);
-    const angleDeg = angle* 180 / Math.PI;
+    var rect = element.getBoundingClientRect();
+    const angleDeg = Math.round(Math.atan2(e.clientY -(rect.right-rect.left)/2 , e.clientX - (rect.bottom - rect.top)/2) * 180 / Math.PI) + 250;
 
     element.style.setProperty('background', `linear-gradient(${angleDeg}deg, #262262 6.24%, #52af5d 91.17%, #48af55 91.17%)`);
   })
 })
 document.querySelectorAll('.gradient-hover-text').forEach( element =>{
   element.addEventListener('mousemove', (e)=>{
-    let mouseX = e.pageX - element.offsetLeft;
-    let mouseY = e.pageY - element.offsetTop;
-    const midx = window.innerWidth/2;
-    const midy = window.innerHeight/2;
-    const angle = Math.atan2(midy - mouseY, midx - mouseX);
-    const angleDeg = angle* 180 / Math.PI;
+    let rect = element.getBoundingClientRect();
+    const angleDeg = Math.round(Math.atan2(e.clientY -(rect.right-rect.left)/2 , e.clientX - (rect.bottom - rect.top)/2) * 180 / Math.PI + 180    );
 
     element.style.setProperty('background', `linear-gradient(${angleDeg}deg, #262262 6.24%, #52af5d 91.17%, #48af55 91.17%)`);
     element.style.setProperty('-webkit-background-clip', `text`);
@@ -196,7 +189,6 @@ td(slider22,dataHeads2,'11',true);
 
 
 function td(slider,data,f,two=false){
-  console.log(two, f, slider)
   let twovar = two ? 2 : 1;
   let bg = document.createElement('div');
   let fg = document.createElement('div');
@@ -208,7 +200,7 @@ function td(slider,data,f,two=false){
 
   let len = data.length,
     current = len-1,
-    closedWidth = Math.floor(window.innerWidth/(f>10)?50*dataExec.length : 50*dataHeads.length)
+    closedWidth = Math.floor(sliderrect.width/(data.length + 2))
   ;
 
   for (var i=0; i<len; i++){
@@ -243,7 +235,8 @@ function td(slider,data,f,two=false){
       backgroundColor:'rgba(250,250,250,0)',
       left:i*closedWidth,
       transformOrigin:'100% 100%',
-      x:'100%'
+      // transform : 'translate(0%,0%)',
+      // x:'100%'
     },{
       duration:i*0.15,
       x:0,
@@ -251,39 +244,36 @@ function td(slider,data,f,two=false){
     })  
 
 
+    // if(f>10){   // if f>10 then it is for heads
+    //   if(two){
+    //     headEmail2.href = "mailto:"+data[len-1].Handles.Email;
+    //     headLinkedin2.href = data[len-1].Handles.LinkedIn;
+    //     headInstagram2.href = data[len-1].Handles.Instagram;
 
-    console.log("do ----" ,two)
-    if(f>10){   // if f>10 then it is for heads
-      if(two){
-        headEmail2.href = "mailto:"+data[len-1].Handles.Email;
-        headLinkedin2.href = data[len-1].Handles.LinkedIn;
-        headInstagram2.href = data[len-1].Handles.Instagram;
+    //     namehead2.innerHTML = data[len-1].name;
+    //     DesignationHeads2.innerHTML = data[len-1].designation;
 
-        namehead2.innerHTML = data[len-1].name;
-        DesignationHeads2.innerHTML = data[len-1].designation;
-        console.log('here head2')
+    //     // allheaddesg2[len-1].classList.add('active');
+    //   } else {
+    //     headEmail.href = "mailto:"+data[len-1].Handles.Email;
+    //     headLinkedin.href = data[len-1].Handles.LinkedIn;
+    //     headInstagram.href = data[len-1].Handles.Instagram;
 
-        // allheaddesg2[len-1].classList.add('active');
-      } else {
-        headEmail.href = "mailto:"+data[len-1].Handles.Email;
-        headLinkedin.href = data[len-1].Handles.LinkedIn;
-        headInstagram.href = data[len-1].Handles.Instagram;
+    //     namehead.innerHTML = data[len-1].name;
+    //     DesignationHeads.innerHTML = data[len-1].designation;
+    //   }
+    // } else {
 
-        console.log('here in head')
-        namehead.innerHTML = data[len-1].name;
-        DesignationHeads.innerHTML = data[len-1].designation;
-      }
-    } else {
-      console.log('here in exec')
+    //   ExecEmail.href = "mailto:"+data[len-1].Handles.Email;
+    //   ExecLinkedIn.href = data[len-1].Handles.LinkedIn;
+    //   ExecInstagram.href = data[len-1].Handles.Instagram;
+    //   nameexec.innerHTML = data[len-1].name;
+    //   DesignationExec.innerHTML = data[len-1].designation;
+    // }
 
-      ExecEmail.href = "mailto:"+data[len-1].Handles.Email;
-      ExecLinkedIn.href = data[len-1].Handles.LinkedIn;
-      ExecInstagram.href = data[len-1].Handles.Instagram;
-      nameexec.innerHTML = data[len-1].name;
-      DesignationExec.innerHTML = data[len-1].designation;
-    }
+    
     b.onmouseenter = b.onclick = (e)=>{    
-      if (Number(e.currentTarget.id.substr(4))==current) return;
+      if (Number(e.currentTarget.id.substr(4))===current) return;
     
       var staggerOrder = !!(current < Number(e.currentTarget.id.substr(4)));
       current = Number(e.currentTarget.id.substr(4));
@@ -309,7 +299,6 @@ function td(slider,data,f,two=false){
   
           let allheaddesg2 = document.querySelectorAll('.headdesg2');
           allheaddesg2.forEach((e)=>{ e.classList.remove('active') });
-          console.log(current, allheaddesg2[current]);
           allheaddesg2[current].classList.add('active');
         } else {
           headEmail.href = "mailto:"+data[current].Handles.Email;
@@ -320,7 +309,6 @@ function td(slider,data,f,two=false){
   
           let allheaddesg = document.querySelectorAll('.headdesg');
           allheaddesg.forEach((e)=>{ e.classList.remove('active') });
-          console.log(current, allheaddesg[current]);
           allheaddesg[current].classList.add('active');
         }
 
@@ -338,6 +326,9 @@ function td(slider,data,f,two=false){
     }
 
   }
+
+  document.getElementById('b'+twovar+f+1).click();
+  document.getElementById('b'+twovar+f+0).click();
 }
 
 }

@@ -20,10 +20,12 @@ function About() {
 
           <div className="p-wrap">
             <div className="ppanel blue overflow-hidden"> 
+              <p>
               Anim in magna est cupidatat ex eiusmod consectetur aliqua deserunt consectetur ullamco non cillum mollit. Labore aute in consequat proident et. Cillum velit Lorem elit mollit irure qui pariatur laborum. 
+              </p>
             </div>
-            <div className="ppanel red overflow-hidden"> Ipsum nostrud culpa ad sit mollit amet commodo enim excepteur sunt reprehenderit qui aliqua. Magna duis quis laborum irure laborum excepteur proident tempor qui reprehenderit tempor exercitation. Ex reprehenderit laboris tempor eiusmod ut cillum esse dolor mollit quis commodo.</div>
-            <div className="ppanel purple overflow-hidden">Excepteur ut aliqua do labore officia ullamco consectetur incididunt nulla consectetur veniam. Eiusmod culpa consectetur velit duis excepteur excepteur deserunt sint. Esse aliqua aliqua pariatur exercitation eu minim adipisicing officia laborum. Commodo enim anim fugiat labore nulla reprehenderit cupidatat deserunt adipisicing et. Mollit magna nisi voluptate sit sint dolor nulla ipsum mollit aute ea dolor in fugiat. </div>
+            <div className="ppanel red overflow-hidden"> <p>Ipsum nostrud culpa ad sit mollit amet commodo enim excepteur sunt reprehenderit qui aliqua. Magna duis quis laborum irure laborum excepteur proident tempor qui reprehenderit tempor exercitation. Ex reprehenderit laboris tempor eiusmod ut cillum esse dolor mollit quis commodo.</p></div>
+            <div className="ppanel purple overflow-hidden"><p>Excepteur ut aliqua do labore officia ullamco consectetur incididunt nulla consectetur veniam. Eiusmod culpa consectetur velit duis excepteur excepteur deserunt sint. Esse aliqua aliqua pariatur exercitation eu minim adipisicing officia laborum. Commodo enim anim fugiat labore nulla reprehenderit cupidatat deserunt adipisicing et. Mollit magna nisi voluptate sit sint dolor nulla ipsum mollit aute ea dolor in fugiat. </p></div>
           </div>
         </section>
       </div>

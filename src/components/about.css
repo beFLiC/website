@@ -15,11 +15,6 @@
   background-color: var(--background-color);
 }
 
-.blue {
-  height: 100vh;
-  background-color: #00026d;
-}
-
 
 .text-wrap {
   position: relative;
@@ -36,31 +31,31 @@
   bottom: 0%;
   z-index: 1;
   width: 100%;
+  text-align: right;
   height: 100%;
-  font-size: 40px;
+  font-size: 5vw;
   text-transform: uppercase;
   font-weight: 900;
-  text-align:center;
   background-color: var(--background-color);
   
   transform:translateY(100%);
+  padding: 2vw;
   opacity: 0;
 }
 
 .panel-text.blue-text {
-  color: blue;
+  color : #26289d;
 }
 
 .panel-text.red-text {
-  color: red;
+  color: #338D3F;
 }
 
 .panel-text.purple-text {
-  color: purple;
-}
-
-.panel-text.orange-text {
-  color: orange;
+  background: linear-gradient(105deg, #2f2a7b 6.24%, #39b54a 91.17%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 
@@ -71,8 +66,8 @@
 .p-wrap {
   position: relative;
   overflow: hidden;
-  width: 450px;
-  height: 80vh;
+  width: 45vw;
+  height: 32vw;
 }
 
 .ppanel {
@@ -82,12 +77,21 @@
   right: 0%;
   bottom: 0%;
   z-index: 1;
-  width: 100%;
-  height: 100%;
+  width: 35vw;
+  height: 32vw;
   /* background-image: url("../images/5ed12171d9d512cb2feead83_5.jpg"); */
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+
+  border-radius: 15px;
+}
+
+.ppanel p {
+  margin: 4vw;
 }
 
 .ppanel._2 {
@@ -97,22 +101,17 @@
 
 .ppanel.blue {
   z-index: auto;
+  background: linear-gradient(221deg, #545185 4.24%, #00026d 93.17%);
 }
 
 .ppanel.red {
   z-index: auto;
-  background-color: red;
-  background-image: none;
-}
-
-.ppanel.orange {
-  z-index: auto;
-  background-color: #cf5d00;
-  background-image: none;
+  background: linear-gradient(225deg, #44764a 55.17%, #6bbc7a 94.17%);
+  /* background-image: none; */
 }
 
 .ppanel.purple {
   z-index: auto;
-  background-color: #808;
-  background-image: none;
+  background: linear-gradient(19deg, #262262 40.24%, #52af5d 118.17%, #48AF46 104.17%);
+  /* background-image: none; */
 }

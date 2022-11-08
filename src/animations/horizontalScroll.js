@@ -61,16 +61,22 @@ function horizontalScroll(){
   images.forEach((image, i) => {
     masterTimeline
       .to(image, { height: 0 },`img${i}`)
-      .to(image,{duration:0.12},'>');     // adding delay to see the text
+      .to(image,{duration:0.3},'>');     // adding delay to see the text
   });
 
   var texts = gsap.utils.toArray('.panel-text');
   texts.forEach((text, i) => {
-    masterTimeline
+    if(i<2){
+      masterTimeline
+        .to(text, { duration: 0.33, opacity: 1, y:"50%" },`img${i}-=0.33`)  // label minus 0.33
+        .to(text,{duration:0.3},'>') // "+adding delay of 0.12, > is after previous"
+        .to(text, { duration: 0.33, opacity: 0, y:"0%" }, ">")
+      ;
+    }else{
+      masterTimeline
       .to(text, { duration: 0.33, opacity: 1, y:"50%" },`img${i}-=0.33`)  // label minus 0.33
-      .to(text,{duration:0.12},'>') // "+adding delay of 0.12, > is after previous"
-      .to(text, { duration: 0.33, opacity: 0, y:"0%" }, ">")
-    ;
+      // .to(text,{duration:0.3},'>') // "+adding delay of 0.12, > is after previous"
+    }
   });
 
   masterTimeline.to(panels,{
@@ -84,6 +90,17 @@ function horizontalScroll(){
     scrollTrigger: { scrub: 0.3 }
   });
   
+
+  // gradient hover
+
+  document.querySelectorAll('.ppanel.purple').forEach( element =>{
+    element.addEventListener('mousemove', (e)=>{
+      var rect = element.getBoundingClientRect();
+      const angleDeg = Math.round(Math.atan2(e.clientY -(rect.right-rect.left)/2 , e.clientX - (rect.bottom - rect.top)/2) * 180 / Math.PI) ;
+  
+      element.style.setProperty('background', `linear-gradient(${angleDeg}deg, #262262 6.24%, #52af5d 91.17%, #48af55 91.17%)`);
+    })
+  })
 }
 
 export default horizontalScroll;

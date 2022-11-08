@@ -1,21 +1,20 @@
-import About from "../components/about";
-import Contact from "../components/contact";
-import Home from "../components/home";
-import Team from "../components/team";
-import Gallery from "../components/gallery";
-import ResponsiveNavbar from "../components/ResponsiveNavbar";
+// import About from "../components/about";
+// import Contact from "../components/contact";
+// import Home from "../components/home";
+// import Team from "../components/team";
+import Nav from "../components/mobile/MobileNav.js";
+// import { Breakpoint } from "react-socks";
 
-import {useEffect} from 'react';
-
-function MobileView(){
+function MobileView() {
   return (
     <>
-      <ResponsiveNavbar/>
-      <Home/>
-      <About/>
-      <Team/>
-      <Gallery/>
-      <Contact/>
+      {/* <Breakpoint medium down> */}
+        <Nav />
+        {/* <Home/> */}
+        {/* <About/> */}
+        {/* <Team/> */}
+        {/* <Contact /> */}
+      {/* </Breakpoint> */}
     </>
   );
 }

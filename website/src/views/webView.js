@@ -17,6 +17,7 @@ function WebView() {
 
   return (
     <>
+      <div className="sm:block hidden z-0">
       <progress max="100" value="0"
         className="fixed top-0 left-0 appearance-none w-full h-4 border-none bg-transparent
           ::-webkit-progress-bar { background-color: transparent; }"
@@ -32,6 +33,7 @@ function WebView() {
       <Gallery />
       <Team />
       <Contact />
+      </div>
     </>
   );
 }

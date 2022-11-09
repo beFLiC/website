@@ -2,41 +2,41 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/all";
 
+
+
 function horizontalScroll(isMobile){
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
   if(isMobile){
-    scrollMobile();
+    let masterTimeline = gsap.timeline({
+      defaults : {
+        ease: "none",
+      },
+      // xPercent: -100 * ( panels.length - 1 ),
+      scrollTrigger: {
+        trigger: "section.black",
+        // scroller: '.App',
+        pin: '#about',
+        start: ()=>"top top",
+        end: () => "+=" + ((document.querySelectorAll('.ppanel').length) * window.innerHeight),
+        scrub: 2,
+        // markers: true,
+        // end: () =>  "+=" + (panelsContainer.offsetWidth - window.innerWidth)/3,
+        invalidateOnRefresh: true
+      }
+    });
+    scrollMobile(masterTimeline);
+    nav(masterTimeline);
   }else{
     horizontalScroll_();
   }
 }
 
-function scrollMobile(){
+function scrollMobile(masterTimeline){
 
   gsap.set(".ppanel", { zIndex: (i, target, targets) => targets.length - i });
   gsap.set(".panel-text", { zIndex: (i, target, targets) => targets.length - i });
   let images = gsap.utils.toArray('.ppanel:not(.purple)');
-
-  let masterTimeline = gsap.timeline({
-    defaults : {
-      ease: "none",
-    },
-    // xPercent: -100 * ( panels.length - 1 ),
-    scrollTrigger: {
-      trigger: "section.black",
-      // scroller: '.App',
-      pin: '#about',
-      start: ()=>"top top",
-      end: () => "+=" + ((images.length + 1) * window.innerHeight),
-      scrub: 2,
-      markers: true,
-      // end: () =>  "+=" + (panelsContainer.offsetWidth - window.innerWidth)/3,
-      invalidateOnRefresh: true
-    }
-  })
-
-
 
   images.forEach((image, i) => {
     masterTimeline
@@ -60,12 +60,10 @@ function scrollMobile(){
   });
 }
 
-
-function horizontalScroll_(){
-  /* Main navigation */
+function nav(masterTimeline){
   let panelsContainer = document.querySelector("#panels-container");
-  let masterTimeline;
-  // Navigation
+  const panels = gsap.utils.toArray("#panels-container .panel");
+
   document.querySelectorAll(".navbar li a").forEach(anchor => {
     anchor.addEventListener("click", function(e) {
       e.preventDefault();
@@ -87,10 +85,16 @@ function horizontalScroll_(){
       });
     });
   });
+}
 
-  /* Panels */
+function horizontalScroll_(){
+
+  let panelsContainer = document.querySelector("#panels-container");
   const panels = gsap.utils.toArray("#panels-container .panel");
   const stopPanel = panels.findIndex((panel) => panel.dataset.pin);
+
+  let masterTimeline;
+  nav(masterTimeline);
 
   // Master timeline, animation horizontal + cards
   masterTimeline = gsap.timeline({
@@ -111,30 +115,7 @@ function horizontalScroll_(){
     duration:stopPanel
   });
 
-  gsap.set(".ppanel", { zIndex: (i, target, targets) => targets.length - i });
-  gsap.set(".panel-text", { zIndex: (i, target, targets) => targets.length - i });
-
-  var images = gsap.utils.toArray('.ppanel:not(.purple)');
-  images.forEach((image, i) => {
-    masterTimeline
-      .to(image, { height: 0 },`img${i}`)
-      .to(image,{duration:0.3},'>');     // adding delay to see the text
-  });
-
-  var texts = gsap.utils.toArray('.panel-text');
-  texts.forEach((text, i) => {
-    if(i<2){
-      masterTimeline
-        .to(text, { duration: 0.33, opacity: 1, y:"50%" },`img${i}-=0.33`)  // label minus 0.33
-        .to(text,{duration:0.3},'>') // "+adding delay of 0.12, > is after previous"
-        .to(text, { duration: 0.33, opacity: 0, y:"0%" }, ">")
-      ;
-    }else{
-      masterTimeline
-      .to(text, { duration: 0.33, opacity: 1, y:"50%" },`img${i}-=0.33`)  // label minus 0.33
-      // .to(text,{duration:0.3},'>') // "+adding delay of 0.12, > is after previous"
-    }
-  });
+  scrollMobile(masterTimeline);
 
   masterTimeline.to(panels,{
     xPercent: -100 * ( panels.length - 1 ),

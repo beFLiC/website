@@ -3,7 +3,7 @@ import Contact from "../components/contact";
 import Home from "../components/home";
 import Team from "../components/team";
 import Gallery from "../components/gallery";
-import ResponsiveNavbar from "../components/ResponsiveNavbar";
+import MobileNav from "../components/mobile/MobileNav";
 
 import {useEffect} from 'react';
 import Animations from "../animations/Animations";
@@ -14,7 +14,7 @@ function MobileView(){
   
   return (
     <>
-      {/* <ResponsiveNavbar /> */}
+      <MobileNav />
         <div id="panels-container">
           <Home />
           <About />

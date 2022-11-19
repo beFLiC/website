@@ -1,8 +1,31 @@
-import React, { useState } from 'react'
-
+import React, { useEffect, useState } from 'react'
+import {useNavigate} from 'react-router-dom'
 const Profile = () => {
+    const navigate = useNavigate();
+    const callForToken = async () => {
+        try {
+            const res = fetch('/profile', {
+                method : "get",
+                headers : {
+                    Accept : "application/json",
+                    "Content-Type" : "application/json"
+                },
+                credentials :"include"
+            });
+            await (await res).json();
+            if(!(await res).status === 200) {
+                throw new Error(`Can't Give Excess`);
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
     const [up, setUp] = useState(false);
     const [nav, setNav] = useState(false);
+    useEffect(() => {
+        callForToken();
+    }, [])
+    
   return (
     <>
 <div className="bg-slate-100 h-[100vh]">

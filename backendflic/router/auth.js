@@ -2,7 +2,6 @@ const express = require('express');
 const route = express.Router();
 const encrypt = require('bcryptjs');
 const fuser = require('../model/flicUser');
-const jwt = require('jsonwebtoken');
 const allowUser = require('../middleware/allowUser');
 
 route.post('/register',async (req,res) => {
@@ -54,8 +53,9 @@ route.post('/login', async (req,res) => {
     }
 })
 
-route.get('/flician', allowUser,  (req, res) => {
-    res.send("Hello Filicians");
+route.get('/profile', allowUser,  (req, res) => {
+    res.send(req.rootUser);
+
 })
 
 module.exports = route;

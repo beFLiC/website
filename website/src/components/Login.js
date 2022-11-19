@@ -7,6 +7,7 @@ const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [valid,setValid] = useState(false);
   const loginUser = async (e) => {
     e.preventDefault();
     const res = await fetch('/login', {
@@ -23,10 +24,12 @@ const Login = () => {
 
     if(res.status === 400 || !data) {
       window.alert("Invalid Details");
+      setValid(false);
     }else{
       window.alert("Login Successfully");
-      navigate('/');
+      setValid(true);
     }
+    (valid)?navigate('/profile'):navigate('/login');
   }
   return (
     <>

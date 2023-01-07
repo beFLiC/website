@@ -94,7 +94,6 @@ function horizontalScroll_(){
   const stopPanel = panels.findIndex((panel) => panel.dataset.pin);
 
   let masterTimeline;
-  nav(masterTimeline);
 
   // Master timeline, animation horizontal + cards
   masterTimeline = gsap.timeline({
@@ -136,6 +135,8 @@ function horizontalScroll_(){
       element.style.setProperty('background', `linear-gradient(${angleDeg}deg, #262262 6.24%, #52af5d 91.17%, #48af55 91.17%)`);
     })
   })
+  nav(masterTimeline);
+
 }
 
 export default horizontalScroll;

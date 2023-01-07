@@ -1,7 +1,11 @@
 import SvgCircle from "./svg/svgCircles";
 import SvgDrawIcon from "./svg/svgDrawIcon";
+import { useEffect } from "react";
 
 function Home() {
+  useEffect(() => {
+    
+  },[]);
   return (
     < div id="home" className="panel w-screen h-screen overflow-hidden">
       <SvgCircle x="90vw" y="50vh" r = "60vh"/>
@@ -42,8 +46,10 @@ function Home() {
           <Foot/>
         </div>
 
-        </div>
       </div>
+
+      <div className="3dmodel"></div>
+    </div>
   );
 }
 
